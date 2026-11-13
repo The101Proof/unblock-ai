@@ -1,0 +1,20 @@
+# Copy this file to .dev.vars (git-ignored). It's the ONE place for your keys:
+# the dashboard and the weekly email both read it locally, and
+# `npm run secrets:push` uploads it to Cloudflare for both.
+# Never commit .dev.vars, never put keys in src/.
+
+# Stripe dashboard → Test mode → Developers → API keys → Secret key
+STRIPE_SECRET_KEY=sk_test_replace_me
+
+# Optional, for the weekly email: resend.com → API Keys → Create (Sending access)
+RESEND_API_KEY=re_replace_me
+
+# Optional, private Google Sheet (see GOOGLE-SHEETS.md). From the service account's JSON
+# key: client_email and private_key (one line, in double quotes, keep the \n's).
+GOOGLE_SA_EMAIL=dashboard-reader@your-project.iam.gserviceaccount.com
+GOOGLE_SA_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nreplace_me\n-----END PRIVATE KEY-----\n"
+GOOGLE_SHEET_ID=replace_me
+
+# Optional, Google Search Console + GA4 (see GOOGLE-ANALYTICS.md; reuses the service account above)
+GSC_SITE_URL=sc-domain:yourdomain.com
+GA4_PROPERTY_ID=123456789
